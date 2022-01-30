@@ -1,0 +1,133 @@
+body{
+    height: 100%;
+    width: auto;
+    width: 100%;
+}
+.header{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.girisyap{
+    width: 250px;
+    display: inline-block;
+    margin-left: 220px;
+    border-style: solid;
+    border-color: cadetblue;
+    background-color: cadetblue;
+    text-align: center;
+    
+}
+
+.login{
+    padding: 10px;
+    margin: 5px;
+border-style: solid;
+border-color: cadetblue;
+border-width: 5px;
+border-radius: 20px;
+text-align: center;
+
+}
+
+#girisbut{
+    padding: 10px;
+    margin: 5px;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: green;
+
+}
+
+#girisbut:hover{
+    transform: scale(1.25);
+}
+
+.baslik{
+    text-align: center;
+    color: cadetblue;
+}
+
+.menu{
+    background-color: cadetblue;
+    text-align: center;
+    margin: 15px;
+}
+.menu ul{
+    display: inline-flex;
+    list-style: none;
+}
+.menu ul li{
+    width: auto;
+    margin: 16px;
+    padding: 15px;
+    text-align: center;
+    
+}
+.menu ul li a{
+    font-size: large;
+    color: wheat;
+    text-decoration: none;
+}
+
+.menu ul li a:hover{
+    transition: 0.7s;
+    color: tomato;
+}
+
+.binafoto{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 15px;
+
+}
+
+#tablo1{
+    display: inline-flex;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: cadetblue;
+    
+}
+#kayitbut{
+    width: 100px;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 10px;
+}
+#kayitbut:hover{
+    transform: scale(1.3);
+}
+
+.genelkisiler{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;;
+
+}
+.kisiavatar{
+    margin: 20px;
+    width: 200px;
+    
+}
+.genelfotolar{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.anifoto{
+    margin: 50px;
+    width: 500px;
+}
+
+.anifoto:hover{
+    transform: scale(1.25);
+    
+}
+
+
+.footer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: cadetblue;
+    text-align: center;
+}

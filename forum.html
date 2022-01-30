@@ -1,0 +1,121 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erkut Soyak Anadolu Lisesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id ="tepe" class="header">
+        <div class="baslik">
+            <h1>ESAL Mezun Arkadaşlar</h1>
+            <h2>2017-2018</h2>
+            <h3 style="color:black">Bugün <%= FormatDateTime(Date, vbLongDate) %><br></h3>
+        </div>
+        <div class="girisyap">
+
+            <form method="post" action="gelenler.asp">
+                <input class="login" type="text" placeholder="Kullanıcı adı" name="kullaniciadi" required>
+                <input class="login" type="password" placeholder="Şifre" name="sifre" required>
+                <input id="girisbut" type="submit" value="Giriş Yap">
+            </form>
+        </div>
+
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.asp">Anasayfa</a></li>
+            <li><a href="forum.asp">Forum</a></li>
+            <li><a href="kisiler.asp">Kişiler</a></li>
+            <li><a href="fotograflar.asp">Fotoğraflar</a></li>
+            <li><a href="videolar.asp">Videolar</a></li>
+            <li><a href="neredene.asp">Nerede-Ne Yapıyor?</a></li>
+            <li><a href="kayit.asp">Kayıt</a></li>
+            <li><a href="harita.asp">Harita</a></li>
+        </ul>
+    </nav>
+
+    <form action="forum.asp" method="POST" style="margin-top: 50px; ">
+
+        <div style="text-align: center;">
+
+            <%
+            set conn = Server.CreateObject("ADODB.Connection")
+            conn.Open("DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=" & Server.MapPath("Database1.mdb"))
+            set verikaydet=Server.CreateObject("ADODB.Recordset")
+
+            verikaydet.open "forummesaj",conn
+            %>
+
+            <table style="border: 1px solid black; border-collapse:collapse;" border="1">
+                <tr>
+                    <th style="color: cadetblue;">Ad-Soyad</th>
+                    <th style="color: cadetblue;">Tarih</th>
+                    <th style="color: cadetblue;">Mesaj</th>
+                </tr>
+                <% 
+                do while not verikaydet.eof
+                    response.write "<tr>"
+                        response.write "<td>" & verikaydet("adsoyad")
+                        response.write "<td>" & verikaydet("tarihsaat")
+                        response.write "<td>" & verikaydet("mesaj")
+
+                    verikaydet.movenext
+                loop
+                %>
+            </table>
+        </div>
+        
+        <textarea style="resize: none; margin-top: 50px;" name="forummesaj" rows="10" cols="100" placeholder="Mesajınızı buraya girebilirsiniz..."></textarea>
+        <br><br>
+        <input type="submit" value="Gönder">
+      </form>
+
+
+    <div class="footer">
+        <div id="logo">
+            <a href="index.html"><img style="width: 200px;" src="img/logo.jpg" alt="Gözükmesi lazım" title="ESAL Logo"></a>
+        </div>
+        <div>
+            <p style="color: wheat;">© Tasarım: Anıl Çetin</p>
+            <a style="color: wheat; text-decoration: none;" href="http://anilcetin.epizy.com/?i=1" target="_blank">Kişisel Web Sayfası</a>
+        </div>
+
+        <a href="#tepe"><img style="width: 100px;" src="img/yukari.png" alt="Gözükmesi lazım" title="Yukarı Çık!"></a>
+    </div>
+</body>
+</html>
+
+<%
+
+    if request.servervariables("REQUEST_METHOD")="POST" then
+        mesaj=request.form("forummesaj")
+        tarih=now()
+
+
+        set conn = Server.CreateObject("ADODB.Connection")
+        conn.Open("DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=" & Server.MapPath("Database1.mdb"))
+
+        'set verikaydet=Server.CreateObject("ADODB.Recordset")
+
+        'verikaydet.Open "kayitlar", conn,1,3
+        'verikaydet.addnew
+        'verikaydet("kullaniciadi")=ad
+        'verikaydet("sifre")=mesaj
+        'verikaydet("tarih")=now()
+        'verikaydet.Update
+
+        sql="INSERT INTO forummesaj(mesaj,tarihsaat) VALUES('" & mesaj & "','" & tarih & "')"
+        conn.Execute sql   
+    
+        'verikaydet.close
+        'set verikaydet=Nothing
+        conn.Close
+        set conn=Nothing
+
+    end if
+
+%>

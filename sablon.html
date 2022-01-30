@@ -1,0 +1,67 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erkut Soyak Anadolu Lisesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+    <div id ="tepe" class="header">
+        <div class="baslik">
+            <h1>ESAL Mezun Arkadaşlar</h1>
+            <h2>2017-2018</h2>
+            <h3 style="color:black">Bugün <%= FormatDateTime(Date, vbLongDate) %><br></h3>
+        </div>
+        <div class="girisyap">
+
+            <form method="post" action="gelenler.asp">
+                <input class="login" type="text" placeholder="Kullanıcı adı" name="kullaniciadi" required>
+                <input class="login" type="password" placeholder="Şifre" name="sifre" required>
+                <input id="girisbut" type="submit" value="Giriş Yap">
+            </form>
+
+
+
+        </div>
+
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="kisiler.html">Kişiler</a></li>
+            <li><a href="fotograflar.html">Fotoğraflar</a></li>
+            <li><a href="videolar.html">Videolar</a></li>
+            <li><a href="neredene.html">Nerede-Ne Yapıyor?</a></li>
+            <li><a href="kayit.html">Kayıt</a></li>
+            <li><a href="harita.html">Harita</a></li>
+        </ul>
+    </nav>
+
+    <div class="binafoto">
+        <img style="width: 800px;" src="img/esalbina.jpg" alt="Çıkması gerekirdi!" title="ESAL binası...">
+       <div style="margin-left: 50px;">
+        <h1>4 Sene Geçirilen Güzel Yer..</h1>
+        <p style="font-size: large;">-Güzel senelerimizin geçtiği, en yakın arkadaşlarımızı edindiğimiz bir yer!<br><br>
+            -Arkadaşlarımızla vakit geçirmek için, bu binanın içinde olabilmek için okula gitmeye can atardık...
+            <br><br>
+            -Özellikle bu binanın içinde ettiğimiz muhabbetler daha bir keyifli olurdu...</p>
+        
+       </div>
+    </div>
+
+    <div class="footer">
+        <div id="logo">
+            <a href="index.html"><img style="width: 200px;" src="img/logo.jpg" alt="Gözükmesi lazım" title="ESAL Logo"></a>
+        </div>
+        <div>
+            <p style="color: wheat;">© Tasarım: Anıl Çetin</p>
+            <a style="color: wheat; text-decoration: none;" href="http://anilcetin.epizy.com/?i=1" target="_blank">Kişisel Web Sayfası</a>
+        </div>
+
+        <a href="#tepe"><img style="width: 100px;" src="img/yukari.png" alt="Gözükmesi lazım" title="Yukarı Çık!"></a>
+    </div>
+</body>
+</html>

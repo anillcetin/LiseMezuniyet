@@ -1,0 +1,273 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erkut Soyak Anadolu Lisesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id ="tepe" class="header">
+        <div class="baslik">
+            <h1>ESAL Mezun Arkadaşlar</h1>
+            <h2>2017-2018</h2>
+            <h3 style="color:black">Bugün <%= FormatDateTime(Date, vbLongDate) %><br></h3>
+        </div>
+        <div class="girisyap">
+
+            <form method="post" action="gelenler.asp">
+                <input class="login" type="text" placeholder="Kullanıcı adı" name="kullaniciadi" required>
+                <input class="login" type="password" placeholder="Şifre" name="sifre" required>
+                <input id="girisbut" type="submit" value="Giriş Yap">
+            </form>
+        </div>
+
+    </div>
+    <nav class="menu">
+        <ul>
+            <li><a href="index.asp">Anasayfa</a></li>
+            <li><a href="forum.asp">Forum</a></li>
+            <li><a href="kisiler.asp">Kişiler</a></li>
+            <li><a href="fotograflar.asp">Fotoğraflar</a></li>
+            <li><a href="videolar.asp">Videolar</a></li>
+            <li><a href="neredene.asp">Nerede-Ne Yapıyor?</a></li>
+            <li><a href="kayit.asp">Kayıt</a></li>
+            <li><a href="harita.asp">Harita</a></li>
+        </ul>
+    </nav>
+
+    <div style="text-align: center;"  class="kayitekran">
+        
+            <form id="kayitform" action="#">
+                <h1 style="color: cadetblue;">Kayıt ol</h1>
+                <hr>
+                <table id="tablo1" cellpadding="15" >
+                    
+                    <tr>
+                        <th>İsim *</th>
+                        <td><input type="text" placeholder="İsminizi girin..." name="isimkayit" id="isim" required> <br></td>
+                    </tr>
+                   
+                    <tr>
+                        <th>Soyisim *</th>
+                        <td><input type="text" placeholder="Soyisminizi girin..." name="soyisimkayit" id="soyisim" required> <br></td>
+                    </tr>
+
+                    <tr>
+                        <th>Doğum Tarihi *</th>
+                        <td><input type="date" name="dgunukayit"> <br></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Üniversiteniz</th>
+                        <td><input type="text" placeholder="Okuduğunuz üniversiteyi girin..." name="ünikayit" id="üni"> <br></td>
+                    </tr>
+
+                    <tr>
+                        <th>Yaptığınız iş</th>
+                        <td><input type="text" placeholder="İşinizi girin..." name="iskayit" id="is"> <br></td>
+                    </tr>
+                      
+                    <tr>
+                        <th>Telefon</th>
+                        <td><input type="text" placeholder="Telefon numaranızı girin..." name="telkayit" id="tel"> <br></td>
+                    </tr>
+
+                    <tr>
+                        <th>E-mail *</th>
+                        <td><input type="email" placeholder="Mail adresinizi girin..." name="mailkayit" id="mail"> <br></td>
+                    </tr>
+
+
+                    <tr>
+                        <th>Cinsiyet *</th>
+                        <td><input type="radio" id="erkek" name="cinsiyet" value="erkek" required>
+                            <label for="erkek">Erkek</label><br>
+          
+                            <input type="radio" id="kadin" name="cinsiyet" value="kadin" required>
+                            <label for="kadin">Kadın</label><br></td>
+                    </tr>
+
+                    <tr>
+                        <th>Hobiler</th>
+                        <td>  <input type="checkbox" id="spor" name="spor" value="spor">
+                            <label for="spor">Spor</label><br>
+                            <input type="checkbox" id="araba" name="araba" value="araba">
+                            <label for="araba">Arabalar</label><br>
+                            <input type="checkbox" id="sanat" name="sanat" value="sanat">
+                            <label for="sanat">Sanat</label><br>
+                            <input type="checkbox" id="dizfilm" name="dizifilm" value="dizifilm">
+                            <label for="dizifilm">Dizi-Film Seyretmek</label><br>
+                            <input type="checkbox" id="tamirat" name="tamirat" value="tamirat">
+                            <label for="tamirat">Tamirat</label><br>
+
+                    </tr>
+
+                    <tr>
+                        <th>İl *</th>
+                        <td><select name="sehirler" id="sehirler">
+                            <option value="1">Adana</option>
+                            <option value="2">Adıyaman</option>
+                            <option value="3">Afyonkarahisar</option>
+                            <option value="4">Ağrı</option>
+                            <option value="5">Amasya</option>
+                            <option value="6">Ankara</option>
+                            <option value="7">Antalya</option>
+                            <option value="8">Artvin</option>
+                            <option value="9">Aydın</option>
+                            <option value="10">Balıkesir</option>
+                            <option value="11">Bilecik</option>
+                            <option value="12">Bingöl</option>
+                            <option value="13">Bitlis</option>
+                            <option value="14">Bolu</option>
+                            <option value="15">Burdur</option>
+                            <option value="16">Bursa</option>
+                            <option value="17">Çanakkale</option>
+                            <option value="18">Çankırı</option>
+                            <option value="19">Çorum</option>
+                            <option value="20">Denizli</option>
+                            <option value="21">Diyarbakır</option>
+                            <option value="22">Edirne</option>
+                            <option value="23">Elazığ</option>
+                            <option value="24">Erzincan</option>
+                            <option value="25">Erzurum</option>
+                            <option value="26">Eskişehir</option>
+                            <option value="27">Gaziantep</option>
+                            <option value="28">Giresun</option>
+                            <option value="29">Gümüşhane</option>
+                            <option value="30">Hakkâri</option>
+                            <option value="31">Hatay</option>
+                            <option value="32">Isparta</option>
+                            <option value="33">Mersin</option>
+                            <option value="34">İstanbul</option>
+                            <option value="35">İzmir</option>
+                            <option value="36">Kars</option>
+                            <option value="37">Kastamonu</option>
+                            <option value="38">Kayseri</option>
+                            <option value="39">Kırklareli</option>
+                            <option value="40">Kırşehir</option>
+                            <option value="41">Kocaeli</option>
+                            <option value="42">Konya</option>
+                            <option value="43">Kütahya</option>
+                            <option value="44">Malatya</option>
+                            <option value="45">Manisa</option>
+                            <option value="46">Kahramanmaraş</option>
+                            <option value="47">Mardin</option>
+                            <option value="48">Muğla</option>
+                            <option value="49">Muş</option>
+                            <option value="50">Nevşehir</option>
+                            <option value="51">Niğde</option>
+                            <option value="52">Ordu</option>
+                            <option value="53">Rize</option>
+                            <option value="54">Sakarya</option>
+                            <option value="55">Samsun</option>
+                            <option value="56">Siirt</option>
+                            <option value="57">Sinop</option>
+                            <option value="58">Sivas</option>
+                            <option value="59">Tekirdağ</option>
+                            <option value="60">Tokat</option>
+                            <option value="61">Trabzon</option>
+                            <option value="62">Tunceli</option>
+                            <option value="63">Şanlıurfa</option>
+                            <option value="64">Uşak</option>
+                            <option value="65">Van</option>
+                            <option value="66">Yozgat</option>
+                            <option value="67">Zonguldak</option>
+                            <option value="68">Aksaray</option>
+                            <option value="69">Bayburt</option>
+                            <option value="70">Karaman</option>
+                            <option value="71">Kırıkkale</option>
+                            <option value="72">Batman</option>
+                            <option value="73">Şırnak</option>
+                            <option value="74">Bartın</option>
+                            <option value="75">Ardahan</option>
+                            <option value="76">Iğdır</option>
+                            <option value="77">Yalova</option>
+                            <option value="78">Karabük</option>
+                            <option value="79">Kilis</option>
+                            <option value="80">Osmaniye</option>
+                            <option value="81">Düzce</option>
+                          </select></td>
+                    </tr>
+
+                    <tr>
+                        <th>Web Sayfası</th>
+                        <td><input type="text" placeholder="http://www.. şeklinde giriniz" name="web" id="web"> <br></td>
+                    </tr>
+
+                    <tr>
+                        <th>Kullanıcı Adı *</th>
+                        <td><input type="text" placeholder="Kullanıcı adı oluşturun..." name="kullanicikayit" id="kullanicikayit"> <br></td>
+                    </tr>
+
+                    <tr>
+                        <th>Şifre *</th>
+                        <td><input type="password" placeholder="Yeni bir şifre oluşturun..." name="sifre" id="sifre"> <br></td>
+                    </tr>
+
+
+                  <tr>
+                      <td><button id="kayitbut" type="submit">Kayıt Ol</button></td>
+                      <td>Zaten Bir Hesabım Var!<a href="#tepe">Giriş Yap</a>.</p></td>
+                  </tr>
+
+                </table>    
+
+                <div>
+                  
+                </div>
+              </form>
+        
+    </div>
+
+    <div class="footer">
+        <div id="logo">
+            <a href="index.html"><img style="width: 200px;" src="img/logo.jpg" alt="Gözükmesi lazım" title="ESAL Logo"></a>
+        </div>
+        <div>
+            <p style="color: wheat;">© Tasarım: Anıl Çetin</p>
+            <a style="color: wheat; text-decoration: none;" href="http://anilcetin.epizy.com/?i=1" target="_blank">Kişisel Web Sayfası</a>
+        </div>
+
+        <a href="#tepe"><img style="width: 100px;" src="img/yukari.png" alt="Gözükmesi lazım" title="Yukarı Çık!"></a>
+    </div>
+</body>
+</html>
+
+<%
+
+    if request.servervariables("REQUEST_METHOD")="POST" then
+        isim=request.form("isimkayit")
+        soyisim=request.form("soyisimkayit")
+        dtarih=request.form("dgunukayit")
+        üni=request.form("ünikayit")
+        is=request.form("iskayit")
+        telefon=request.form("telkayit")
+        mail=request.form("mailkayit")
+
+        set conn = Server.CreateObject("ADODB.Connection")
+        conn.Open("DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=" & Server.MapPath("Database1.mdb"))
+
+        'set verikaydet=Server.CreateObject("ADODB.Recordset")
+
+        'verikaydet.Open "kayitlar", conn,1,3
+        'verikaydet.addnew
+        'verikaydet("kullaniciadi")=ad
+        'verikaydet("sifre")=mesaj
+        'verikaydet("tarih")=now()
+        'verikaydet.Update
+
+        sql="INSERT INTO kayitlar(isim,soyisim,dtarih,üniversite,is,telefon,mail) VALUES('" & isim & "','" & soyisim & "','" & dtarih & "',
+        '" & üni & "','" & is & "','" & telefon & "','" & mail"')"
+        conn.Execute sql   
+    
+        'verikaydet.close
+        'set verikaydet=Nothing
+        conn.Close
+        set conn=Nothing
+
+    end if
+
+%>
